@@ -9,9 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
-
+// convertimos al MainActivity a un object listener
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
+    //variable members
     int numberToGuess = 0;
     EditText e;
     TextView t;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         numberToGuess = intNumberToGuess();
+        //inicializamos variable member
         e = (EditText)findViewById(R.id.editText);
         t = (TextView)findViewById(R.id.textView);
         Button b = (Button)findViewById(R.id.button);
@@ -38,7 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
+        /**
+         * e.getText() retorna un objeto de tipo Editable, aplicamos toString() para convertirlo en un String y luego hacer
+         * la conversion a number mediante el metodo parseInt() de la clase Integer
+         */
         int number = Integer.parseInt(e.getText().toString());
+        //comparamos el user input con el numero aleatorio generado
         if(number == numberToGuess)
         {
             t.setText(number + " is the right number");
