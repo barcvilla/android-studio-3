@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button3).setOnClickListener(bh);
     }
 
-    // inner Class
+    // Event Handler using Inner Class
     private class ButtonHandler implements View.OnClickListener
     {
         void show(String message)
