@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bundle.putInt("fno", firstnumber);
             bundle.putInt("sno", secondnumber);
             /*trasladamos el bundle al intent objet*/
-            intent.putExtra("gcf", bundle);
+            intent.putExtra("gcfdata", bundle);
             /*Lanzamos el activity*/
             startActivity(intent);
 
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * metodo onStart es llamado cuando se lanza la app y tambien cada vez que se retorne y se coloque el foco en el Activity.
+     */
     @Override
     public void onStart()
     {
